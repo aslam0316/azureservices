@@ -28,7 +28,7 @@ How to use Azure services to create enriched dataset that can be consumed by dat
    
 5. Create a SQL Server
 
-   New-AzSqlServer -ResourceGroupName 'rapidcircleresource' -ServerName 'rapsqlsrv-int-01' -Location 'Central India' -SqlAdministratorCredentials $(New-Object -TypeName      System.Management.Automation.PSCredential -ArgumentList "Rapid999", $(ConvertTo-SecureString -String "Circle999" -AsPlainText -Force))
+   New-AzSqlServer -ResourceGroupName 'rapidcircleresource' -ServerName 'rapsqlsrv-int-01' -Location 'Central India' -SqlAdministratorCredentials $(New-Object -TypeName      System.Management.Automation.PSCredential -ArgumentList "username", $(ConvertTo-SecureString -String "password" -AsPlainText -Force))
    Get-AzSqlServer | select FullyQualifiedDomainName
    #rapsqlsrv-int-01.database.windows.net
    
@@ -39,5 +39,12 @@ How to use Azure services to create enriched dataset that can be consumed by dat
 
 7. Create a database
 
-   New-AzSqlDatabase  -ResourceGroupName 'rapidcircleresource' -ServerName 'rapsqlsrv-int-01' -DatabaseName 'RapidDatabase' -RequestedServiceObjectiveName "S0" -SampleName "AdventureWorksLT"
+   New-AzSqlDatabase  -ResourceGroupName 'rapidcircleresource' -ServerName 'rapsqlsrv-int-01' -DatabaseName 'databasename' -RequestedServiceObjectiveName "S0" -SampleName "AdventureWorksLT"
    
+8. To download a sample dataset use the below link
+    https://www.kaggle.com/datasets
+  
+9. Follow the below document for other steps.
+   [Blob to Azure SQL.docx](https://github.com/aslam0316/azureservices/files/6228728/Blob.to.Azure.SQL.docx)
+
+    
